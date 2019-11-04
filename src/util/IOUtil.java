@@ -27,6 +27,13 @@ public class IOUtil {
 		return 0;
 	}
 	
+	public static Integer getJustInt() {
+		setScanner();
+		Integer integer = scanner.nextInt();
+		closeScanner();
+		return integer;
+	}
+	
 	public static Float getFloat() {
 		if (scanner != null) return scanner.nextFloat();
 		return 0f;
