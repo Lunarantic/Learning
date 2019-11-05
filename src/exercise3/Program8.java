@@ -6,7 +6,7 @@ public class Program8 {
 	
 	private Program8() {}
 	
-	public Program8 getInstance() {
+	public static Program8 getInstance() {
 		if (instance == null) instance = new Program8();
 		return instance;
 	}
