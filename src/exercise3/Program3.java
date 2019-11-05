@@ -17,10 +17,10 @@ public class Program3 {
 		
 		int max = Integer.MIN_VALUE, min = Integer.MAX_VALUE, temp;
 		
-		for (int i = 0; i <= l; ++i) {
+		for (int i = 0; i <= l; ++i, --l) {
 			temp = nums[i];
-			nums[i] = nums[l-i];
-			nums[l-i] = temp;
+			nums[i] = nums[l];
+			nums[l] = temp;
 			
 			max = Math.max(nums[i], temp);
 			min = Math.min(nums[i], temp);
