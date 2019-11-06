@@ -1,5 +1,6 @@
 package util;
 
+import java.io.Console;
 import java.util.Scanner;
 
 public class IOUtil {
@@ -17,6 +18,10 @@ public class IOUtil {
 		}
 	}
 	
+	public static void ignoreLine() {
+		scanner.nextLine();
+	}
+	
 	public static String getStringLine() {
 		if (scanner != null) return scanner.nextLine();
 		return null;
@@ -24,7 +29,7 @@ public class IOUtil {
 	
 	public static Integer getInt() {
 		if (scanner != null) return scanner.nextInt();
-		return 0;
+		return null;
 	}
 	
 	public static Integer getJustInt() {
@@ -42,5 +47,20 @@ public class IOUtil {
 	public static Double getDouble() {
 		if (scanner != null) return scanner.nextDouble();
 		return 0d;
+	}
+	
+	public static String readPassword() {
+		Console console = System.console();
+		
+		if (console == null) {
+			return getStringLine();
+		} else {
+			return new String(console.readPassword());
+		}
+	}
+	
+	public static Character getChar() {
+		String line = getStringLine();
+		return line.charAt(0);
 	}
 }
